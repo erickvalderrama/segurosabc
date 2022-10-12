@@ -2,6 +2,10 @@
 
 Consultor de pagos por clientes - Intranet
 
+![alt text](https://raw.githubusercontent.com/erickvalderrama/segurosabc/main/images/mobile.png)
+![alt text](https://raw.githubusercontent.com/erickvalderrama/segurosabc/main/images/web.png)
+
+
 ## Instalación - Pasos
 
 	- Descargar [NodeJS](https://nodejs.org/dist/v16.17.1/node-v16.17.1-x64.msi):
