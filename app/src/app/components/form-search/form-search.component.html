@@ -1,0 +1,23 @@
+<app-loading [active]="loading"></app-loading>
+
+<form #top  #form="ngForm" name="form" novalidate class="form-search" (ngSubmit)="search()">
+    <div class="row">
+        <div class="col-md-12 col-xs-12">
+            <div class="form-group">
+                <app-label class="text-center" text="Ingrese la cédula del cliente"></app-label>
+                <input #identificationfield="ngModel" type="text" [(ngModel)]="identification" name="identificationfield" placeholder="Número de cédula"  class="form-control"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <div class="form-group">
+            </div>
+        </div>
+        <div class="col-md-6 col-xs-12">
+            <div class="form-group">
+                <app-button [type]="'submit'" [class]="'btn btn-lg btn-success btn-block mt-2'" [text]="'Buscar'"></app-button>
+            </div>
+        </div>
+    </div>
+</form>

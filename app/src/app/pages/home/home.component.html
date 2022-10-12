@@ -1,0 +1,87 @@
+<div #top class="row mt-5 top">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                <app-title>Seguros ABC</app-title>
+            </div>
+        </div>
+        <div class="row panel-home">
+            <app-form-search (result)="result($event)"></app-form-search>
+        </div>
+        <div *ngIf="data.length" class="col-md-12 mt-2 mb-2">
+            <span class="text-center">
+                Resultado de busqueda: {{data.length}} registros.
+            </span>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12 table-responsive">
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong>
+                            Cédula
+                        </strong>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>
+                            Nombre completo
+                        </strong>
+                    </div>
+                </div>
+                <div class="row row-selected" *ngFor="let t of data" (click)="showDetails(t)">
+                    <div class="col-md-6">
+                        {{t.identification}}
+                    </div>
+                    <div class="col-md-6">
+                        {{t.fullName}}
+                    </div>
+                    <div class="col-md-12 payments-section" *ngIf="currentUser==t.identification">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>
+                                    Fecha
+                                </strong>
+                            </div>
+                            <div class="col-md-6">
+                                <strong>
+                                    Monto
+                                </strong>
+                            </div>
+                        </div>
+                        <div class="row" *ngFor="let t of data">
+                            <div class="col-md-6">
+                                {{t.date | date: 'MM/dd/yyyy'}}
+                            </div>
+                            <div class="col-md-6">
+                                {{t.amount}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Cédula</th>
+                            <th>Nombre completo</th>
+                            <th>Fecha de pago</th>
+                            <th>Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="!data.length">
+                            <td colspan="4" class="text-center">
+                                No hay registros en la busqueda
+                            </td>
+                        </tr>
+                        <tr *ngFor="let t of data" (click)="showDetails(t)">
+                           <td>{{t.identification}}</td>
+                           <td>{{t.fullName}}</td>
+                           <td *ngIf="currentUser==t.identification" colspan="2"></td>
+                        </tr>
+                    </tbody>
+                </table> -->
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
