@@ -7,6 +7,8 @@ Consultor de pagos por clientes - Intranet
 	- Descargar [NodeJS](https://nodejs.org/dist/v16.17.1/node-v16.17.1-x64.msi):
 	- Ir a la carpeta de appweb y ejecutar el comando: npm install
 	- Luego ejecutar el comando: ng serve
+	- Despues de iniciar la base de datos e instalarla se procede a configurar la cadena de conexión de la API en el archivo:
+		api\appsettings.Development.json
 
 ## Requiere
 
